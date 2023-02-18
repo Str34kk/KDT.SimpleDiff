@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <LangVersion>11</LangVersion>
+    <AssemblyName>KDT.SimpleDiff</AssemblyName>
+    <RootNamespace>KDT.SimpleDiff</RootNamespace>
+    <Version>0.0.1</Version>
+  </PropertyGroup>
+
+</Project>
