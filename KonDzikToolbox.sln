@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KDT.SimpleDiff", "KDT.SimpleDiff\KDT.SimpleDiff.csproj", "{1346FD46-6397-4B2D-8F69-7E7944FFB415}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KDT.SimpleDiff", "KDT.SimpleDiff\KDT.SimpleDiff.csproj", "{1346FD46-6397-4B2D-8F69-7E7944FFB415}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KDT.Web", "KDT.Web\KDT.Web.csproj", "{50D17364-3E36-4F8A-88DA-A07D392DF1F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1346FD46-6397-4B2D-8F69-7E7944FFB415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1346FD46-6397-4B2D-8F69-7E7944FFB415}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1346FD46-6397-4B2D-8F69-7E7944FFB415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D17364-3E36-4F8A-88DA-A07D392DF1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D17364-3E36-4F8A-88DA-A07D392DF1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D17364-3E36-4F8A-88DA-A07D392DF1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D17364-3E36-4F8A-88DA-A07D392DF1F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
