@@ -1,12 +1,15 @@
 using KDT.Web.Database;
 using KDT.Web.Entities;
+using KDT.Web.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<KdtContext>(o => o.UseInMemoryDatabase("KDT"));
+builder.Services.AddDbContext<KdtDbContext>();
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 var app = builder.Build();
 
@@ -15,16 +18,5 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.MapGet("/fetchsmallitems", async (KdtContext db) =>
-    await db.SmallItems.ToListAsync());
-
-app.MapPost("/addsmalitem", async (SmallItem smallItem, KdtContext db) =>
-{
-    db.SmallItems.Add(smallItem);
-    await db.SaveChangesAsync();
-
-    return Results.Created("/addsmalitem", smallItem);
-});
 
 app.Run();
