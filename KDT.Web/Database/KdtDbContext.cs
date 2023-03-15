@@ -7,7 +7,7 @@ public class KdtDbContext : DbContext
 {
     protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseInMemoryDatabase(databaseName: "KDT");
+        optionsBuilder.UseSqlite(connectionString: @"Data Source=C:\Users\KonDzik\source\repos\KonDzikToolbox\kdt.sqlite;");
     }
     
     public DbSet<SmallItem> SmallItems => Set<SmallItem>();

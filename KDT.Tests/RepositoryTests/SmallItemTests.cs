@@ -4,13 +4,12 @@ public class SmallItemTests
 {
     #region Ctor
 
-    private readonly KdtDbContext _dbContext;
     private readonly Repository<SmallItem> _repository;
     
     public SmallItemTests()
     {
-        _dbContext = new KdtDbContext();
-        _repository = new Repository<SmallItem>(_dbContext);
+        var dbContext = new KdtDbContext();
+        _repository = new Repository<SmallItem>(dbContext);
     }
 
     #endregion
