@@ -1,23 +1,23 @@
 ﻿namespace KDT.Tests.RepositoryTests;
 
-public class SmallItemTests
+public class SmallItemVersionedTests
 {
     #region Ctor
 
-    private readonly Repository<SmallItem> _repository;
+    private readonly Repository<SmallItemVersioned> _repository;
     
-    public SmallItemTests()
+    public SmallItemVersionedTests()
     {
         var dbContext = new KdtDbContext();
-        _repository = new Repository<SmallItem>(dbContext);
+        _repository = new Repository<SmallItemVersioned>(dbContext);
     }
 
     #endregion
-
+    
     [Fact]
     public async void CrudFlow()
     {
-        await _repository.Add(new SmallItem());
+        await _repository.Add(new SmallItemVersioned());
         
         var items = await _repository.GetListAsync();
         

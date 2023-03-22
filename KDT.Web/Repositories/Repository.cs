@@ -1,5 +1,5 @@
-﻿using KDT.Web.Database;
-using KDT.Web.Entities;
+﻿using KDT.SimpleDiff.Extensions;
+using KDT.Web.Database;
 using Microsoft.EntityFrameworkCore;
 
 namespace KDT.Web.Repositories;
@@ -20,7 +20,7 @@ public class Repository<T> : IRepository<T> where T : class
     public async Task<T> Add(T entity)
     {
         var entityEntry = _dbDbContext.Set<T>().Add(entity);
-        await _dbDbContext.SaveChangesAsync();
+        await _dbDbContext.VersionedSaveChangesAsync();
 
         return entityEntry.Entity;
     }
@@ -38,7 +38,7 @@ public class Repository<T> : IRepository<T> where T : class
     public async Task<T> Update(T entity)
     {
         _dbDbContext.Entry(entity).State = EntityState.Modified;
-        await _dbDbContext.SaveChangesAsync();
+        await _dbDbContext.VersionedSaveChangesAsync();
 
         return entity;
     }
@@ -46,7 +46,7 @@ public class Repository<T> : IRepository<T> where T : class
     public async Task<T> Delete(T entity)
     {
         _dbDbContext.Set<T>().Remove(entity);
-        await _dbDbContext.SaveChangesAsync();
+        await _dbDbContext.VersionedSaveChangesAsync();
         
         return entity;
     }

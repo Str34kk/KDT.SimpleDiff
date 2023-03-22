@@ -11,4 +11,5 @@ public class KdtDbContext : DbContext
     }
     
     public DbSet<SmallItem> SmallItems => Set<SmallItem>();
+    public DbSet<SmallItemVersioned> SmallItemsVersioned => Set<SmallItemVersioned>();
 }

@@ -14,7 +14,7 @@ namespace KDT.Web.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.3");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
 
             modelBuilder.Entity("KDT.Web.Entities.SmallItem", b =>
                 {
@@ -28,6 +28,20 @@ namespace KDT.Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SmallItems");
+                });
+
+            modelBuilder.Entity("KDT.Web.Entities.SmallItemVersioned", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SmallItemsVersioned");
                 });
 #pragma warning restore 612, 618
         }

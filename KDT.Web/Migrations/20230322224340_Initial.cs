@@ -22,6 +22,19 @@ namespace KDT.Web.Migrations
                 {
                     table.PrimaryKey("PK_SmallItems", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "SmallItemsVersioned",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SmallItemsVersioned", x => x.Id);
+                });
         }
 
         /// <inheritdoc />
@@ -29,6 +42,9 @@ namespace KDT.Web.Migrations
         {
             migrationBuilder.DropTable(
                 name: "SmallItems");
+
+            migrationBuilder.DropTable(
+                name: "SmallItemsVersioned");
         }
     }
 }
